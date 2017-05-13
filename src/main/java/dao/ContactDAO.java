@@ -33,7 +33,7 @@ public class ContactDAO {
                 contact.setBornDate(resultSet.getString("born"));
                 contacts.add(contact);
             }
-            
+                        
             resultSet.close();
             statement.close();
         } catch (SQLException ex) {

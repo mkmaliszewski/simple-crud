@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,7 +20,16 @@
                 </tr>
             </thead>
             <tbody>
-                
+            <c:forEach items="${contacts}" var="contact">
+                <tr>
+                    <td><c:out value="${contact.id}" /></td>
+                    <td><c:out value="${contact.name}" /></td>
+                    <td><c:out value="${contact.lastName}" /></td>
+                    <td><c:out value="${contact.mail}" /></td>
+                    <td><c:out value="${contact.number}" /></td>
+                    <td><c:out value="${contact.bornDate}" /></td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </body>
