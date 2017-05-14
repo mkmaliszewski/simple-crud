@@ -4,10 +4,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Contacts</title>
     </head>
     <body>
         <h1>Hello! This is a page containing contacts data from a database.</h1>
+        <p> Click here to add a new record to the database: </p>
+        <a href="Controller?action=insert">Add new contact</a>
         <table>
             <thead>
                 <tr>

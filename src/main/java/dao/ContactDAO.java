@@ -1,11 +1,14 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Contact;
 import utility.DatabaseConnection;
 
@@ -33,7 +36,7 @@ public class ContactDAO {
                 contact.setBornDate(resultSet.getString("born"));
                 contacts.add(contact);
             }
-                        
+            
             resultSet.close();
             statement.close();
         } catch (SQLException ex) {
@@ -41,5 +44,21 @@ public class ContactDAO {
         }
         
         return contacts;
+    }
+    
+    public void addContact(Contact newContact){
+        String query = "INSERT INTO contacts (name, last_name, mail, "
+                + "number, born) VALUES (?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, newContact.getName());
+            preparedStatement.setString(2, newContact.getLastName());
+            preparedStatement.setString(3, newContact.getMail());
+            preparedStatement.setString(4, newContact.getNumber());
+            preparedStatement.setString(5, newContact.getBornDate());
+            preparedStatement.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 }
