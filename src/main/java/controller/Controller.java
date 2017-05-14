@@ -38,6 +38,12 @@ public class Controller extends HttpServlet {
             request.setAttribute("contact", dao.getContact(id));
             goToPage = insert;
         }
+        else if (action.equals("delete")){
+            int id = Integer.parseInt(request.getParameter("id"));
+            dao.deleteContact(id);
+            request.setAttribute("contacts", dao.getContacts());
+            goToPage = list;
+        }
         
         RequestDispatcher view = request.getRequestDispatcher(goToPage);
         view.forward(request, response);

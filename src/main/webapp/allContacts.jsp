@@ -31,6 +31,7 @@
                     <td><c:out value="${contact.number}" /></td>
                     <td><c:out value="${contact.bornDate}" /></td>
                     <td><a href="Controller?action=edit&id=<c:out value="${contact.id}" />">Edit</a></td>
+                    <td><a href="Controller?action=delete&id=<c:out value="${contact.id}" />">Delete</a></td>
                 </tr>
             </c:forEach>
             </tbody>

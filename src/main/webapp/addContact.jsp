@@ -16,7 +16,7 @@
                         <td>Name: </td>
                         <td>
                             <input type="text" name="newName" 
-                                   value="<c:out value="${contact.id}" />" 
+                                   value="<c:out value="${contact.name}" />" 
                                    autofocus required>
                         </td>
                     </tr>
@@ -24,7 +24,7 @@
                         <td>Last name: </td>
                         <td>
                             <input type="text" name="newLastName"
-                                   value="<c:out value="${contact.name}" />" 
+                                   value="<c:out value="${contact.lastName}" />" 
                                    required>
                         </td>
                     </tr>
@@ -32,7 +32,7 @@
                         <td>Mail: </td>
                         <td>
                             <input type="email" name="newMail" 
-                                   value="<c:out value="${contact.lastName}" />" 
+                                   value="<c:out value="${contact.mail}" />" 
                                    required>
                         </td>
                     </tr>
@@ -48,7 +48,7 @@
                         <td>Born: </td>
                         <td>
                             <input type="date" name="newBornDate" 
-                                   value="<c:out value="${contact.born}" />" 
+                                   value="<c:out value="${contact.bornDate}" />" 
                                    required max="2010-01-01">
                         </td>
                     </tr>
