@@ -58,7 +58,15 @@ public class Controller extends HttpServlet {
         newContact.setMail(request.getParameter("newMail"));
         newContact.setNumber(request.getParameter("newNumber"));
         newContact.setBornDate(request.getParameter("newBornDate"));
-        dao.addContact(newContact);
+
+        String id = request.getParameter("id");
+        if (id == null || id.equals("")){
+            dao.addContact(newContact);
+        }
+        else {
+            newContact.setId(Integer.parseInt(id));
+            dao.updateContact(newContact);
+        }
         
         request.setAttribute("contacts", dao.getContacts());
         RequestDispatcher view = request.getRequestDispatcher(list);

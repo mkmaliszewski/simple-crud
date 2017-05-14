@@ -13,6 +13,14 @@
             <table>
                 <tbody>
                     <tr>
+                        <td>Contact ID: </td>
+                        <td>
+                            <input type="text" name="id"
+                                   value="<c:out value="${contact.id}" />"
+                                   readonly placeholder="New ID">
+                        </td>
+                    </tr>
+                    <tr>
                         <td>Name: </td>
                         <td>
                             <input type="text" name="newName" 

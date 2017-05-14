@@ -98,4 +98,22 @@ public class ContactDAO {
             ex.printStackTrace();
         }
     }
+    
+    public void updateContact(Contact contact){
+        String query = "UPDATE contacts SET (name, last_name, mail, number, "
+                + "born) = (?, ?, ?, ?, ?) WHERE id=?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, contact.getName());
+            preparedStatement.setString(2, contact.getLastName());
+            preparedStatement.setString(3, contact.getMail());
+            preparedStatement.setString(4, contact.getNumber());
+            preparedStatement.setString(5, contact.getBornDate());
+            preparedStatement.setInt(6, contact.getId());
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
 }
