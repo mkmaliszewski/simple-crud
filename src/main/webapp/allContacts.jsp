@@ -7,7 +7,7 @@
         <title>Contacts</title>
     </head>
     <body>
-        <h1>Hello! This is a page containing contacts data from a database.</h1>
+        <h1>Hello! This is a page containing contacts from a database.</h1>
         <p> Click here to add a new record to the database: </p>
         <a href="Controller?action=insert">Add new contact</a>
         <table>
@@ -30,6 +30,7 @@
                     <td><c:out value="${contact.mail}" /></td>
                     <td><c:out value="${contact.number}" /></td>
                     <td><c:out value="${contact.bornDate}" /></td>
+                    <td><a href="Controller?action=edit&id=<c:out value="${contact.id}" />">Edit</a></td>
                 </tr>
             </c:forEach>
             </tbody>

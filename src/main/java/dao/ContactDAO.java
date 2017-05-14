@@ -7,8 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.Contact;
 import utility.DatabaseConnection;
 
@@ -57,8 +55,35 @@ public class ContactDAO {
             preparedStatement.setString(4, newContact.getNumber());
             preparedStatement.setString(5, newContact.getBornDate());
             preparedStatement.executeUpdate();
+            preparedStatement.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+    }
+    
+    public Contact getContact(int contactId){
+        String query = "SELECT * FROM contacts WHERE id=?";
+        Contact contact = new Contact();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, contactId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            
+            while (resultSet.next()){
+                contact.setId(contactId);
+                contact.setName(resultSet.getString("name"));
+                contact.setLastName(resultSet.getString("last_name"));
+                contact.setMail(resultSet.getString("mail"));
+                contact.setNumber(resultSet.getString("number"));
+                contact.setBornDate(resultSet.getString("born"));
+            }
+            
+            resultSet.close();
+            preparedStatement.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        return contact;
     }
 }

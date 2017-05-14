@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,23 +14,43 @@
                 <tbody>
                     <tr>
                         <td>Name: </td>
-                        <td><input type="text" name="newName" autofocus required></td>
+                        <td>
+                            <input type="text" name="newName" 
+                                   value="<c:out value="${contact.id}" />" 
+                                   autofocus required>
+                        </td>
                     </tr>
                     <tr>
                         <td>Last name: </td>
-                        <td><input type="text" name="newLastName" required></td>
+                        <td>
+                            <input type="text" name="newLastName"
+                                   value="<c:out value="${contact.name}" />" 
+                                   required>
+                        </td>
                     </tr>
                     <tr>
                         <td>Mail: </td>
-                        <td><input type="email" name="newMail" required></td>
+                        <td>
+                            <input type="email" name="newMail" 
+                                   value="<c:out value="${contact.lastName}" />" 
+                                   required>
+                        </td>
                     </tr>
                     <tr>
                         <td>Number: </td>
-                        <td><input type="number" name="newNumber" required></td>
+                        <td>
+                            <input type="number" name="newNumber" 
+                                   value="<c:out value="${contact.number}" />"
+                                   required>
+                        </td>
                     </tr>
                     <tr>
                         <td>Born: </td>
-                        <td><input type="date" name="newBornDate" required max="2010-01-01"></td>
+                        <td>
+                            <input type="date" name="newBornDate" 
+                                   value="<c:out value="${contact.born}" />" 
+                                   required max="2010-01-01">
+                        </td>
                     </tr>
                     <tr>
                         <td><input type="reset" value="Reset"></td>

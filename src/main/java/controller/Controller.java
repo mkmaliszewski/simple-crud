@@ -33,6 +33,11 @@ public class Controller extends HttpServlet {
         else if (action.equals("insert")){
             goToPage = insert;
         }
+        else if (action.equals("edit")){
+            int id = Integer.parseInt(request.getParameter("id"));
+            request.setAttribute("contact", dao.getContact(id));
+            goToPage = insert;
+        }
         
         RequestDispatcher view = request.getRequestDispatcher(goToPage);
         view.forward(request, response);
