@@ -5,11 +5,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Contacts</title>
+        <link rel="stylesheet" type="text/css" href="mystyles.css">
     </head>
     <body>
         <h1>Hello! This is a page containing contacts from a database.</h1>
         <p> Click here to add a new record to the database: </p>
         <a href="Controller?action=insert">Add new contact</a>
+        <br /><br />
         <table>
             <thead>
                 <tr>
@@ -18,6 +20,7 @@
                     <td>Mail</td>
                     <td>Number</td>
                     <td>Born</td>
+                    <td colspan = "2">Ation</td>
                 </tr>
             </thead>
             <tbody>

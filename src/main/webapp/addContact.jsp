@@ -7,7 +7,7 @@
         <title>Add new contact</title>
     </head>
     <body>
-        <h1>This is the page, where you can add a new contact. Please fill the
+        <h1>Adding new contact / editing existing. Please fill the
         following form:</h1>
         <form action="Controller" method="post" autocomplete="off">
             <table>
@@ -20,7 +20,7 @@
                         <td>
                             <input type="text" name="newName" 
                                    value="<c:out value="${contact.name}" />" 
-                                   autofocus required>
+                                   autofocus required maxlength="15">
                         </td>
                     </tr>
                     <tr>
@@ -28,7 +28,7 @@
                         <td>
                             <input type="text" name="newLastName"
                                    value="<c:out value="${contact.lastName}" />" 
-                                   required>
+                                   required maxlength="35">
                         </td>
                     </tr>
                     <tr>
@@ -36,7 +36,7 @@
                         <td>
                             <input type="email" name="newMail" 
                                    value="<c:out value="${contact.mail}" />" 
-                                   required>
+                                   required maxlength="45">
                         </td>
                     </tr>
                     <tr>
@@ -44,7 +44,7 @@
                         <td>
                             <input type="number" name="newNumber" 
                                    value="<c:out value="${contact.number}" />"
-                                   required>
+                                   required max="999999999">
                         </td>
                     </tr>
                     <tr>
