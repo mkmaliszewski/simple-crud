@@ -13,7 +13,6 @@
         <table>
             <thead>
                 <tr>
-                    <td>Contact ID</td>
                     <td>Name</td>
                     <td>Last Name</td>
                     <td>Mail</td>
@@ -24,7 +23,6 @@
             <tbody>
             <c:forEach items="${contacts}" var="contact">
                 <tr>
-                    <td><c:out value="${contact.id}" /></td>
                     <td><c:out value="${contact.name}" /></td>
                     <td><c:out value="${contact.lastName}" /></td>
                     <td><c:out value="${contact.mail}" /></td>

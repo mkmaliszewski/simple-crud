@@ -12,14 +12,9 @@
         <form action="Controller" method="post" autocomplete="off">
             <table>
                 <tbody>
-                    <tr>
-                        <td>Contact ID: </td>
-                        <td>
-                            <input type="text" name="id"
-                                   value="<c:out value="${contact.id}" />"
-                                   readonly placeholder="New ID">
-                        </td>
-                    </tr>
+                    <input type="text" name="id" 
+                           value="<c:out value="${contact.id}" />"
+                           hidden>
                     <tr>
                         <td>Name: </td>
                         <td>

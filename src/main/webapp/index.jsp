@@ -6,6 +6,6 @@
         <title>Welcome!</title>
     </head>
     <body>
-        <jsp:forward page="Controller?action=displayContacts"></jsp:forward>
+        <jsp:forward page="Controller?action=display"></jsp:forward>
     </body>
 </html>

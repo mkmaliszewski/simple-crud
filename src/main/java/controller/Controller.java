@@ -26,7 +26,7 @@ public class Controller extends HttpServlet {
         String action = request.getParameter("action");
         String goToPage = "";
         
-        if (action.equals(("displayContacts"))){
+        if (action.equals(("display"))){
             request.setAttribute("contacts", dao.getContacts());
             goToPage = list;
         }
@@ -68,8 +68,6 @@ public class Controller extends HttpServlet {
             dao.updateContact(newContact);
         }
         
-        request.setAttribute("contacts", dao.getContacts());
-        RequestDispatcher view = request.getRequestDispatcher(list);
-        view.forward(request, response);
+        response.sendRedirect("Controller?action=display");
     }
 }
