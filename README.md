@@ -1,6 +1,6 @@
 # simple-crud
 
-simple-crud is a java web application that connects to a postgres database, reads data and display it on a website. There is also an option to add new records, edit them and delete existing ones. The project was deployed on a apache tomcat server. The sql needed to create a table is presented below:
+simple-crud is a java web application that connects to a postgres database, reads data and displays it on a website. There is also an option to add new records, edit them and delete existing ones. The project was deployed on a apache tomcat server. The sql code needed to create a table used by the project is presented below:
 
 CREATE TABLE contacts (  
 id SERIAL PRIMARY KEY,  
